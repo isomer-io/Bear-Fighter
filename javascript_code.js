@@ -42,9 +42,35 @@ var attackMissed = function() {
 	if (Math.random() < 0.5) {
 		return true;
 	}
+
+	1 - 10
+	Math.floor(1 + (Math.random() * 9) );
+
 	return false;
 }
 
+//returns the users input
+var validatePrompt = function(promptText, options) {
+	//options is an array of valid chooses
+	//if what the user enters does not match anything in the options array
+	//then we will prompt the user again
+
+	while(true) {
+		var input = prompt(promptText); 
+		for (var i = 0; i < options.length; i++) {
+			if (input === options[i]) {
+				return input;
+			}
+		}
+	}
+
+};
+
 // game flow starts here
+
+alert('It\'s a polluted day in yellowstone park.');
+
+var choice = validatePrompt('Would you like to go to the mountains or the woods?', 
+	['mountains', 'woods']);
 
 bearFight(3, 1);
